@@ -29,3 +29,29 @@ class Retangulo(FiguraPlana):
         txt = f"Retângulo: b= {self.b}, h= {self.h} \n"
         txt += super().__str__()
         return txt
+
+
+class Circulo(FiguraPlana):
+    """
+    Representa um círculo de raio r.
+    Iniciado com centro nas coordenadas (0, 0).
+    """
+
+
+    def __init__(self, r:float) -> None:
+
+        self.r = r
+        A = pi * r**2
+        Ix = Iy = (pi * r**4) / 4
+        xc = 0.0
+        yc = 0.0
+        Ixy = 0.0
+        super().__init__(A, Ix, Iy, xc, yc, Ixy)
+
+    def __repr__(self) -> str:
+        return f"Circulo(r={self.r})"
+
+    def __str__(self) -> str:
+        txt = f"Círculo: r= {self.r} \n"
+        txt += super().__str__()
+        return txt
